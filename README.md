@@ -16,41 +16,41 @@ Uses nodejs + expressjs as a dev server
 - [Chrome dev tools](#ChromeDev)
 
 ### Client:
-You can use whatever you want here, just set your output to the "/public" dir. What I have pre-setup below:
+You can use whatever you want here, just set your output to the "/public" directory though the build script does run webpack and change it's output to "/builds". What I have pre-setup below:
 
 - [Webpack](https://webpack.js.org/)
 - [Babeljs](https://babeljs.io/)
 - [tailwindcss](https://tailwindcss.com/)
-- [siema](https://github.com/pawelgrzybek/siema)
 
-Though I am heavily using tailwindcss, webpack is already set up to process sass/scss and regular css as well. So you could use both if you wanted...
+Though I am heavily using tailwindcss, webpack is also set up to process sass/scss and regular css as well. So you could use both if you wanted...
 
 ## How it works:
 
 ### Dev process
 1. Run ```npm start``` to start the node server
 2. In a different terminal tab run ```npm run watch``` to start up webpack and its magic
-3. Create .njk files in the views dir (these are your pages)
+3. Create .njk files in the views directory (these are your pages, ex: "/views/mypage.njk")
 4. Visit the page (ex: http://localhost:3000/mypage)
-   - The server runs nunjucks all over it and then returns an html string
-   - The server then puts this in the "/public" dir by creating a new dir of (ex: "/public/mydir") and creates an "index.html" file    with in this new dir.
-   - The server then serves from the "/public" dir your genereated static html file.
+   - The server runs nunjucks.js all over it and it returns an html string
+   - The server then puts this string in the "/public" directory by creating a new directory of (ex: "/public/mypage") and creates an "index.html" file with-in this new directory.
+   - The server then serves from the "/public" directory your genereated static html file.
 
-You of course are also editing styling files from the "/client" dir and running that as a different process
+You of course are also editing CSS and JS files from the "/client" directory and running that as a different process.
+
+Need child pages? That works too by creating a ".njk" file inside of a directory named after the parent page. (ex: "/mypage/childpage.njk")
 
 ### Build it
 1. Run ```npm start``` to start the node server if not already running.
 2. Open the "/commands/build.js" file and add add your site's urls to the "siteURLs" array
-3. In a different terminal tab run ```npm run build-html``` to proccess your site's urls(this is simply to make sure nothing was        missed or if you want to only a protion of your site's pages)
-4. Then run ```npm run build-assets``` to start up webpack and its magic but in production mode!
-5. Your site is now in the "/public" dir ready to be published!
-6. Profit!
+3. In a different terminal tab run ```npm run build``` to proccess your site's urls(this is simply to make sure nothing was missed or if you want to only a process a protion of your site's pages) This also runs webpack and its magic but in production mode!
+4. Your site is now in the "/builds" directory ready to be published!
+5. Profit!
 
 ### nunjucks components
 
 I feel like this is really cool and makes the process much easier
 
-You can add a component to a .njk file by first making sure the components object is added. Do this by adding to the top of your layout.njk file.
+You can not only create snippets for a header and footer but also add a component to a .njk file by first making sure the components object is added. Do this by adding to the top of your layout.njk file.
 
 ```javascript
 {% import "./macros/components.njk" as components %}
@@ -75,7 +75,7 @@ This generates a preset up btn for you!
 #### To create a component
 
 Lets create a btn component first
-1. Add a btn.njk file to your "/views/components" dir
+1. Add a btn.njk file to your "/views/components" directory
 
 ```javascript
 {% import "../macros/components.njk" as components %}
@@ -153,7 +153,7 @@ What really? That makes me feel special! I can be found on twitter [@the_merb](h
 
 ## To do:
 * Auto refresh to webpack process
-* Built site should end up in a "/build" dir instead of still in "/public"
+* Built site should end up in a "/build" directory instead of still in "/public"
 * Finish "Preconfigured settings" "SERVER" in .env file to actually do what it says it does
 
 # ChromeDev
