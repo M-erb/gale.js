@@ -1,0 +1,20 @@
+{% macro btn(data) %}
+  {% set config = {
+    tag: 'button',
+    class: '',
+    type: 'primary',
+    href: '',
+    target: '',
+    text: '',
+    icon: false
+  }|merge(data) %}
+  {% include "../components/btn.njk" %}
+{% endmacro %}
+
+{% macro icon(data) %}
+  {% set config = {
+    name: 'time',
+    width: '2'
+  }|merge(data) %}
+  {% include "../components/icon.njk" %}
+{% endmacro %}

@@ -1,0 +1,37 @@
+{% extends "./layout.njk" %}
+
+{% block headCode %}
+  <title>Home</title>
+{% endblock %}
+
+{% block content %}
+
+  <div class="Home_hero container">
+    <div class="hero_box max-w-720 mx-auto">
+      <h1 class="">Gale.js</h1>
+
+      <div class="mt-48">
+        {{ components.btn({
+          tag: 'a',
+          type: 'primary',
+          href: '',
+          text: 'Try it now!'
+        }) }}
+      </div>
+    </div>
+  </div>
+
+  <main>
+
+    <section class="container py-96 bg-white text-center">
+      <h2 class="h1 less_bold text-pink">Why use Basic static site generator?</h2>
+      <p class="mt-40 text-16 md:text-24 leading-loose relative z-10">It just works!</p>
+    </section>
+
+  </main>
+
+{% endblock %}
+
+{% block footerCode %}
+  
+{% endblock %}

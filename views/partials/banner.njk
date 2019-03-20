@@ -1,0 +1,7 @@
+{% set bannerColor = vm.content.banner.color.value|default('blue') %}
+<div class="Banner bg-{{ bannerColor }} pt-64 pb-48">
+  <div class="container text-white">
+    {% set bannerTitle = vm.pageTitle if vm.pageTitle else vm.title %}
+    <h1>{{ bannerTitle }}</h1>
+  </div>
+</div>

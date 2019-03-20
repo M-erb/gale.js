@@ -1,0 +1,74 @@
+h1, h2, h3, h4, h5, h6 {
+  @apply .text-black;
+  font-family: 'Open Sans', 'sans-serif';
+
+  &.thin_height {line-height: .9}
+}
+
+.font_plain {
+  font-family: sans-serif;
+}
+
+h1, .h1 {
+  @apply .text-36;
+
+  @screen sm {
+    @apply .text-48;
+  }
+  @screen md {
+    @apply .text-50;
+  }
+  @screen lg {
+    @apply .text-54;
+  }
+  
+  @screen xl {
+    @apply .text-70;
+  }
+}
+h2, .h2 {
+  @apply .text-36;
+
+  @screen lg {
+    @apply .text-40;
+  }
+
+  @screen xl {
+    @apply .text-50;
+  }
+}
+h3, .h3 {
+  @apply .text-24;
+
+  @media (min-width: 1200px) {
+    @apply .text-30;
+  }
+}
+h4, .h4 {
+  @apply .text-18;
+
+  @screen md {
+    @apply .text-20;
+  }
+}
+h5, .h5 {
+  @apply .text-18;
+}
+h6, .h6 {
+  @apply .text-16;
+  @screen md {
+    @apply .text-18;
+  }
+}
+
+p, .p {
+  @apply .text-18;
+}
+
+a {
+  @apply .text-16 .text-orange;
+
+  @screen md {
+    @apply .text-18;
+  }
+}

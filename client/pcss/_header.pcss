@@ -1,0 +1,182 @@
+.Site_Header {
+  @apply .py-16;
+  nav {
+    @apply .flex .justify-between .items-center .w-full .flex-grow .flex-shrink;
+    min-height: 60px;
+
+    .Site_logo {
+      @apply .mr-16;
+      a {
+        img, svg {
+          width: 380px;
+          max-width: 100%;
+        }
+      }
+    }
+
+    .Site_links {
+      @apply .hidden .list-reset .items-center .mr-8 .flex-no-grow .flex-no-shrink;
+
+      @screen lg {
+        @apply .mr-12;
+      }
+      @screen xl {
+        @apply .mr-20;
+      }
+      
+      & > li {
+        @apply .mx-8 .flex-no-grow .flex-no-shrink;
+
+        @screen lg {
+          @apply .mx-12;
+        }
+        @screen xl {
+          @apply .mx-20;
+        }
+
+        & > a:not(.btn_prim) {
+          @apply .px-4 .no-underline .text-black .text-16;
+
+          @screen lg {
+            @apply .text-18 .px-8;
+          }
+          @screen xl {
+            @apply .text-20 .px-16;
+          }
+        }
+        & > a.btn_prim {
+          @apply .text-16;
+
+          @screen lg {
+            @apply .text-18 ;
+          }
+        }
+      }
+
+      
+      @media (min-width: 1200px) {
+        @apply .flex;
+      }
+    }
+
+    .Mobi_btn {
+      @apply .block;
+
+      @media (min-width: 1200px) {
+        @apply .hidden;
+      }
+
+      a {
+        @apply .flex .flex-col .items-center .justify-between;
+        width: 30px;
+        height: 26px;
+        
+        @screen sm {
+          width: 50px;
+          height: 40px;
+        }
+
+        &:hover {
+          @apply .cursor-pointer;
+        }
+
+        .line {
+          @apply .w-full .bg-blue .rounded-full .flex-no-grow .flex-no-shrink;
+          height: 5px;
+          
+          @screen sm {
+            height: 8px;
+          }
+        }
+      }
+    }
+  }
+}
+
+.mobi_menu {
+  @apply .fixed .pin .w-full .h-full .bg-orange .z-50;
+  transform: translateY(-120%);
+  transition: transform .3s;
+
+  &.open {
+    transform: translateY(0);
+  }
+
+  @media (min-width: 1200px) {
+    @apply .hidden;
+  }
+
+  .mobi_nav {
+    @apply .flex .justify-between .items-center .w-full .py-16 .flex-grow .flex-shrink;
+    min-height: 60px;
+
+    .Site_logo {
+      @apply .mr-16;
+      padding-top: 4px;
+
+      a {
+        img, svg {
+          width: 380px;
+          max-width: 100%;
+        }
+      }
+    }
+
+    .mobi_close_btn {
+      a {
+        @apply .relative;
+        width: 30px;
+        height: 30px;
+        
+        @screen sm {
+          width: 40px;
+          height: 40px;
+        }
+
+        &:hover {
+          @apply .cursor-pointer;
+        }
+
+        .line {
+          @apply .absolute .w-full .bg-white .rounded-full .flex-no-grow .flex-no-shrink;
+          height: 5px;
+          top: 29%;
+          left: 0;
+          
+          @screen sm {
+            height: 8px;
+          }
+
+          &:first-child {
+            transform: translateY(50%) rotate(45deg);
+          }
+          &:last-child {
+            transform: translateY(50%) rotate(-45deg);
+          }
+        }
+      }
+    }
+
+  }
+
+  .links_wrap {
+    max-height: 80%;
+  }
+
+  .Site_links {
+    & > li {
+      @apply .mb-16;
+
+      &:last-child {
+        @apply .mb-0;
+      }
+
+      & > a:not(.btn_prim) {
+        @apply .p-4 .no-underline .text-white .text-30;
+      }
+      & > a.btn_prim {
+        @apply .text-18;
+      }
+    }
+  }
+}

@@ -1,0 +1,25 @@
+{% import "../macros/components.njk" as components %}
+{% set btnType = '' %}
+{% if config.type === 'primary' %}
+  {% set btnType = 'btn_prim' %}
+  {% elif config.type === 'white' %}
+    {% set btnType = 'btn_white' %}
+  {% elif config.type === 'hollow' %}
+    {% set btnType = 'btn_hollow' %}
+  {% elif config.type === 'hollow-white' %}
+    {% set btnType = 'btn_hollow_white' %}
+  {% elif config.type === 'link' %}
+    {% set btnType = 'btn_link' %}
+{% endif %}
+
+{% set href = 'href=' + config.href if config.href else '' %}
+{% set target = 'target=' + config.target if config.target else '' %}
+
+<{{ config.tag }} {{ href if config.tag === 'a' }} {{ target if config.tag === 'a' }} class="{{ btnType }} {{ config.class }}">
+  <span class="flex items-center">
+    <span class="flex-grow flex-stretch">{{ config.text }}</span>
+    {% if config.icon or config.type === 'link' %}
+      {{ components.icon({name: 'chevron-right'}) }}
+    {% endif %}
+  </span>
+</{{ config.tag }}>

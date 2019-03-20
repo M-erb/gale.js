@@ -1,0 +1,116 @@
+.Footer_banner {
+  @apply .flex-col;
+
+  .F_questions {
+    @apply .pb-24;
+  }
+
+  .F_more_btn {
+    a {
+      min-width: 280px;
+      text-align: center;
+    }
+  }
+
+  @media (min-width: 1200px) {
+    @apply .flex-row;
+
+    .F_questions {
+      @apply .pb-0;
+    }
+  }
+}
+
+.Footer_logo {
+  @apply .flex-no-grow .flex-no-shrink;
+  .logo {
+    svg {
+      @apply .max-w-full;
+    }
+  }
+}
+
+.Footer_nav_plus_nav {
+  @apply .flex-no-grow .flex-no-shrink;
+
+  @screen lg {
+    @apply .flex;
+  }
+
+  .F_blog {
+    @apply .border-b;
+    border-color: rgba(255,255,255, .2);
+
+    @screen lg {
+      @apply .border-b-0 .border-r .mr-32 .pr-32;
+    }
+    @screen xl {
+      @apply .mr-96 .pr-96;
+    }
+
+    .F_blog_list {
+      @apply .mb-32;
+
+      @screen xl {
+        @apply .mb-40;
+      }
+
+      .F_blog_article {
+        @apply .mb-32;
+
+        h6 {
+          @apply .text-white .mb-24;
+        }
+
+        p {
+          @apply .text-16 .text-gray-light .leading-loose;
+        }
+
+        @screen xl {
+          @apply .mb-40;
+        }
+      }
+    }
+  }
+
+  .Footer_nav {
+    @apply .flex .flex-wrap;
+
+    @screen lg {
+      @apply .block;
+    }
+
+    .item {
+      @apply .mr-40 .mb-24 .flex-no-grow .flex-no-shrink;
+
+      @screen lg {
+        @apply .mr-0;
+      }
+
+      a {
+        @apply .text-24 .text-white .font-bold .no-underline;
+
+        &:hover {
+          @apply .underline;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 1200px) and (min-width: 992px) {
+    // Footer_nav_plus_nav
+    @apply .block;
+
+    .F_blog {
+      @apply .border-b-1 .border-r-0 .mr-0 .pr-0;
+    }
+
+    .Footer_nav {
+      @apply .flex .flex-wrap .max-w-420;
+
+      .item {
+        @apply .mr-40;
+      }
+    }
+  }
+}

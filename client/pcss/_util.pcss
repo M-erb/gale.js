@@ -1,0 +1,36 @@
+.Banner_img {
+  min-height: 120px;
+  background-repeat: no-repeat;
+  background-position: 50%;
+  background-size: cover;
+
+  @screen md {
+    min-height: 300px;
+  }
+}
+
+.overflow-hidden {
+  overflow: hidden;
+}
+
+.Outer_container {
+  @apply .mx-auto .bg-white .relative;
+  overflow-x: hidden;
+  max-width: 1920px;
+}
+
+.Page {
+  @apply .py-24 .w-full;
+
+  @screen md {
+    @apply .py-32;
+  }
+}
+
+code {
+  @apply .bg-gray-darkest .text-green-light .rounded .block .p-16 .mb-24 .mt-4;
+  max-height: 800px;
+  overflow: auto;
+  font-family: monospace;
+  white-space: pre;
+}

@@ -1,0 +1,108 @@
+<footer class="Site_footer">
+
+  <div class="bg-blue py-48">
+    <div class="Footer_banner container flex justify-between items-center">
+      <div class="F_questions flex flex-col lg:flex-row items-center lg:items-end text-white flex-no-grow flex-no-shrink">
+        <h3 class="less_bold thin_height text-white text-center md:text-left">Have some questions?</h3>
+        <div class="ml-24 mt-32 lg:mt-0">
+          {{ components.btn({
+            tag: 'a',
+            class: 'text-white text-18',
+            type: 'link',
+            href: '/support#faqs',
+            target: '',
+            text: 'Check out FAQs'
+          }) }}
+        </div>
+      </div>
+      <div class="F_more_btn flex-no-grow flex-no-shrink mt-32 lg:mt-0">
+        {{ components.btn({
+          tag: 'a',
+          class: 'text-18 lg:px-48',
+          type: 'white',
+          href: '/support',
+          target: '',
+          text: 'Get Support'
+        }) }}
+      </div>
+    </div>
+  </div>
+
+  <div class="bg-black py-40 md:py-96">
+    <div class="container lg:flex justify-between">
+
+      <div class="Footer_logo lg:mr-32 mb-40">
+        <div class="logo mb-40 max-w-380 mx-auto lg:mx-0">
+          {# {{ components.logo({type: 'white'}) }} #}
+        </div>
+        <div class="flex flex-col lg:flex-row justify-center items-center">
+          {{ components.btn({
+            tag: 'a',
+            class: 'flex-no-grow flex-no-shrink',
+            type: 'primary',
+            href: '/support',
+            text: 'WOW a CTA'
+          }) }}
+
+          {{ components.btn({
+            tag: 'a',
+            class: 'mt-24 lg:mt-0 lg:ml-24 flex-no-grow flex-no-shrink',
+            type: 'hollow-white',
+            href: '/support',
+            text: 'Another CTA!'
+          }) }}
+        </div>
+        <div class="text-white mt-64 flex flex-col items-center lg:hidden text-center">
+          <p class="text-sm mt-24 font_plain">©2019</p>
+        </div>
+      </div>
+
+      <div class="Footer_nav_plus_nav text-white">
+
+        <div class="F_blog mb-32 lg:max-w-420">
+          <div class="flex justify-between items-end flex-wrap mb-32">
+            <h6 class="no_bold text-18 text-white sm:text-30 flex-no-grow flex-no-shrink thin_height">Words from us</h6>
+            {{ components.btn({
+              tag: 'a',
+              class: 'text-18 flex-no-grow flex-no-shrink',
+              type: 'link',
+              href: '/blog',
+              text: 'Read more'
+            }) }}
+          </div>
+          <div class="F_blog_list">
+            <div class="F_blog_article">
+              <h6 class="no_bold">Title of the news/blog</h6>
+              <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod</p>
+            </div>
+            <div class="F_blog_article">
+              <h6 class="no_bold">Title of the news/blog</h6>
+              <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="Footer_nav">
+          <div class="item">
+            <a href="/about" class="font-bold">About Us</a>
+          </div>
+          <div class="item">
+            <a href="/" class="font-bold">Terms of Use</a>
+          </div>
+          <div class="item">
+            <a href="/" class="font-bold">Privacy Policy</a>
+          </div>
+          <div class="item">
+            <a href="/contact" class="font-bold">Contact</a>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="text-white mt-64 flex flex-col items-center lg:hidden text-center">
+        <p class="text-sm mt-24 font_plain">©2019</p>
+      </div>
+
+    </div>
+  </div>
+</footer>

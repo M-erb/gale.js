@@ -1,0 +1,23 @@
+{% extends "./layout.njk" %}
+{% block content %}
+
+  <main role="main" class="Page page_error">
+    <section class="container">
+      <div class="sm_page_wrap">
+        <h3>path: </h3>
+        <code>{{ path }}</code>
+        <h3>name: </h3>
+        <code>{{ error.name }}</code>
+        <h3>Message: </h3>
+        <code>{{ error.message }}</code>
+        <h3>Stack: </h3>
+        <code>{{ error.stack }}</code>
+      </div>
+    <section>
+  </main>
+  
+{% endblock %}
+
+{% block footerCode %}
+  
+{% endblock %}

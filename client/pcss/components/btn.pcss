@@ -1,0 +1,98 @@
+.btn {
+  @apply .px-32 .py-12 .rounded-full .text-12 .uppercase .font-bold .cursor-pointer .border-2;
+  text-decoration: none;
+  display: inline-block;
+  line-height: 1;
+  transition: background .3s, color .3s, border .3s;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.link {
+  @apply .text-12 .cursor-pointer .border-b-1 .border-transparent;
+  text-decoration: none;
+  display: inline-block;
+  line-height: 1;
+  transition: background .3s, color .3s;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.btn_prim {
+  @apply .btn .bg-orange .border-orange .text-white;
+  svg {
+    margin-left: 3px;
+  }
+
+  @screen md {
+    @apply .text-16;
+  }
+
+  &:hover {
+    @apply .bg-blue .border-blue;
+  }
+}
+
+.btn_white {
+  @apply .btn .bg-white .border-white .text-green;
+  svg {
+    margin-left: 3px;
+  }
+
+  @screen md {
+    @apply .text-16;
+  }
+
+  &:hover {
+    @apply .bg-green-light .border-green-light .text-black;
+  }
+}
+
+.btn_hollow {
+  @apply .btn .bg-transparent .text-black .border-black;
+  svg {
+    margin-left: 3px;
+  }
+
+  @screen md {
+    @apply .text-16;
+  }
+
+  &:hover {
+    @apply .bg-black .text-white;
+  }
+}
+
+.btn_hollow_white {
+  @apply .btn .bg-transparent .text-white .border-white;
+  svg {
+    margin-left: 3px;
+  }
+
+  @screen md {
+    @apply .text-16;
+  }
+
+  &:hover {
+    @apply .bg-white .text-black;
+  }
+}
+
+.btn_link {
+  @apply .link .text-orange;
+  svg {
+    margin-left: 3px;
+  }
+
+  @screen md {
+    @apply .text-16;
+  }
+
+  &:hover {
+    @apply .text-orange .border-orange;
+  }
+}
