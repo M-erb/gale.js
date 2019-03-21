@@ -4,7 +4,8 @@
   "description": "Basic static site generator, noting more, nothing less. It literally just spits out html and other files for a static site. What did you expect?",
   "main": "server.js",
   "scripts": {
-    "start": "nodemon --inspect server.js",
+    "start": "nodemon server.js",
+    "dev": "nodemon --inspect server.js",
     "watch": "webpack --config ./client/webpack.config.js --watch",
     "build-assets": "webpack --config ./client/webpack.config.js --mode=\"production\"",
     "build": "node ./commands/build.js"
