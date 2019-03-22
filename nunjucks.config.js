@@ -23,7 +23,7 @@ module.exports = () => {
     }
   })
 
-  // Add merge filter
+  // Merge filter
   // This helps with component creation
   env.addFilter('merge', (item, newItem) => {
     let ItemType = Helpers.getType(item)
@@ -51,6 +51,20 @@ module.exports = () => {
 
     return result
   })
-  
+
+  // No Orphans filter
+  env.addFilter('noOrphans', (str, fromNum) => {
+    const arr = str.split(' ')
+    const lastIndex = arr.length - 1
+    const noOrphanFrom = fromNum || 1
+    let result = ''
+    for (let i = 0; i < arr.length; i++) {
+      const word = arr[i]
+      if (i < lastIndex - noOrphanFrom) result = result + word + ' '
+      else result = result + word + '&nbsp;'
+    }
+    return result
+  })
+
   return env
 }
