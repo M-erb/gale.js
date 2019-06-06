@@ -4,6 +4,8 @@ Gale.js is a very basic static site generator, noting more, nothing less. It lit
 
 This project was created to help me quickly create static sites and give me the html files. Clients I have been working with see the benifits of using a static site, but the dev process is lacking. It can be cumbersom when editing html that repeats like a footer or a button. So to over come that I am using nunjucks.js as a templating tool and having it spit out the html for me. Then I can ether deliver this to the client or push them to a server of my chosing. I am adding this here in hopes that this helps someone else out there as well. See more [FAQ](#FAQ)
 
+[https://github.com/M-erb/gale.js](https://github.com/M-erb/gale.js)
+
 ## Tech Stack:
 ### Server:
 Uses nodejs + expressjs as a dev server
