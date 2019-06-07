@@ -7,4 +7,15 @@ body {
   @apply .bg-gray-lighter .font-normal .text-black;
   font-family: 'Open Sans', 'sans-serif';
   overflow-x: hidden;
+
+  // Site underware
+  &::before {
+    @apply .fixed .bg-gray-lighter .w-full;
+    content: '';
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    height: 2000px;
+    z-index: -1;
+  }
 }
