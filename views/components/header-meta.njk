@@ -1,0 +1,13 @@
+<title>{{ config.title }}</title>
+<meta name="description" content="{{ config.description }}">
+
+<meta property="og:url" content="{{ config.og.url }}"/>
+<meta property="og:title" content="{{ config.og.title }}"/>
+<meta property="og:description" content="{{ config.og.description }}"/>
+<meta property="og:type" content="{{ config.og.type }}"/>
+{% if config.og.img.url %}
+{# the og image MUS be an absolute url "eg: https://google.com/path/to/image" #}
+<meta property="og:image" content="{{ config.og.img.url }}"/>
+<meta property="og:image:width" content="{{ config.og.img.width }}"/>
+<meta property="og:image:hight" content="{{ config.og.img.hight }}"/>
+{% endif %}

@@ -18,3 +18,22 @@
   }|merge(data) %}
   {% include "../components/icon.njk" %}
 {% endmacro %}
+
+{% macro headerMeta(data) %}
+  {% set config = {
+    title: 'Gale.js',
+    description: 'Gale.js - Basic static site generator dev enviorment',
+    og: {
+      url: 'https://github.com/M-erb/gale.js',
+      title: 'Gale.js',
+      description: 'Gale.js - Basic static site generator dev enviorment',
+      type: 'website',
+      img: {
+        url: '',
+        width: '',
+        height: ''
+      }
+    }
+  }|merge(data) %}
+  {% include "../components/header-meta.njk" %}
+{% endmacro %}
