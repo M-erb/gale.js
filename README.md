@@ -11,7 +11,6 @@ This project was created to help me quickly create static sites and give me the 
 Uses nodejs + expressjs as a dev server
 - [Nodejs](https://nodejs.org/) (v10)
 - [nodemon](https://github.com/remy/nodemon/)
-- [nodemon](https://github.com/remy/nodemon/)
 - [Expressjs](http://expressjs.com/)
 - [nunjucks](https://github.com/mozilla/nunjucks)
 - [fs-extra](https://github.com/jprichardson/node-fs-extra)
