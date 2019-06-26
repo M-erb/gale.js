@@ -4,6 +4,7 @@ const Helpers = require('./helpers')
 const nunjucks = require('./nunjucks.config')()
 const webpack = require('webpack')
 const webpackConfig = require('./client/webpack.config.js')
+const prettyHtml = require('pretty')
 
 const builder = {
   async html(url, buildFolder, hostURL) {
@@ -18,8 +19,9 @@ const builder = {
 
       nunjucks.render(template, vm, (err, view) => {
         if (!err) {
+          const cleanedView = prettyHtml(view, {ocd: true})
           const filePath = path.join(__dirname, buildFolder, outPutDir, '/index.html')
-          fse.outputFileSync(filePath, view)
+          fse.outputFileSync(filePath, cleanedView)
           return resolve(pageURL)
         } else {
           const error = {
