@@ -34,7 +34,11 @@
     "axios": "^0.19.0",
     "babel-loader": "^8.0.5",
     "babel-preset-env": "^1.7.0",
+<<<<<<< HEAD
     "css-loader": "^2.1.1",
+=======
+    "css-loader": "^3.0.0",
+>>>>>>> c3eccf9e524696268ef1e9896838b6f3f56bb008
     "dotenv": "^6.2.0",
     "express": "^4.16.4",
     "file-loader": "^2.0.0",
