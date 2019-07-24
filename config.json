@@ -1,0 +1,13 @@
+{
+  "host": "gale.com",
+  "siteURLs": [
+    "/",
+    "/about",
+    "/features",
+    "/who-we-serve",
+    "/support",
+    "/news",
+    "/components",
+    "/404"
+  ]
+}

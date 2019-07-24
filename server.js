@@ -7,23 +7,27 @@ const path = require('path')
 const express = require('express')
 const app = express()
 const nunjucks = require('./nunjucks.config')()
-const builder = require('./builder')
+const renderer = require('./renderer')
 const destinationFolder = './public'
+const config = require('./config')
 
 nunjucks.express(app)
 app.set('view engine', 'njk')
 
-// Build static file the nmove on to deliver the file
+// Build static file then move on to deliver the file
 app.get('/*', async (req, res, next) => {
   // Exclude anything that has a '.' as this is most likely a file asset
   if (req.url.indexOf('.') >= 0) next()
   else {
     try {
-      const result = await builder.html(req.url, destinationFolder)
+      const result = await renderer.html(req.url, destinationFolder)
       next()
     } catch (error) {
-      if (error.info.message.includes('template not found')) res.status(404).render('404', {})
-      else res.status(500).render('template-error', { path: req.path, error: err })
+      if (process.env.MODE === 'dev') res.status(500).render('template-error', { path: req.path, error })
+      else {
+        if (error.info.message.includes('template not found')) res.status(404).render('404', {})
+        else res.status(500).render('template-error', { path: req.path, error })
+      }
     }
   }
 })
@@ -35,7 +39,7 @@ function serverStarted() {
   const serverPort = this.address().port
   process.env.PORT = serverPort
   console.log(`visit: http://localhost:${serverPort}`)
-  if (process.env.HOST) console.log(`visit: http://${process.env.HOST}`)
+  if (config.host) console.log(`visit: http://${config.host}`)
 
   // to display local networks to test on other devices
   require('./helpers/logip')(serverPort)

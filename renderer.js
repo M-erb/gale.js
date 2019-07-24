@@ -5,28 +5,34 @@ const nunjucks = require('./nunjucks.config')()
 const webpack = require('webpack')
 const webpackConfig = require('./client/webpack.config.js')
 const prettyHtml = require('pretty')
+const config = require('./config')
 
-const builder = {
+const renderer = {
   async html(url, buildFolder, hostURL) {
     return new Promise((resolve, reject) => {
       let name = url === '/' ? 'home' : url.endsWith('/') ? url.trim().toLowerCase().slice(0, url.length - 1) : url.trim().toLowerCase()
       name = name.startsWith('/') ? name.trim().toLowerCase().slice(1) : name.trim().toLowerCase()
-      const template = name + '.njk'
-      const outPutDir = name === 'home' ? '' : '/' + name
-      const vm = {}
 
-      const pageURL = hostURL ? `${hostURL}${url}` : url
+      const template = /blog\/page\d+\/$/gm.test(url) ? 'blog/pages.njk' : /blog\/[a-zA-Z0-9]/gm.test(url) ? 'blog/template.njk' : name + '.njk'
+      const outPutDir = name === 'home' ? '' : '/' + name
+
+      const vm = {
+        host: config.host,
+        path: url,
+        siteURLs: config.siteURLs
+      }
 
       nunjucks.render(template, vm, (err, view) => {
         if (!err) {
           const cleanedView = prettyHtml(view, {ocd: true})
           const filePath = path.join(__dirname, buildFolder, outPutDir, '/index.html')
           fse.outputFileSync(filePath, cleanedView)
-          return resolve(pageURL)
+          return resolve(url)
         } else {
+          console.log('err: ', err)
           const error = {
             info: err,
-            pageURL
+            url
           }
           return reject(error)
         }
@@ -55,4 +61,4 @@ const builder = {
   }
 }
 
-module.exports = builder
+module.exports = renderer

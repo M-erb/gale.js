@@ -1,6 +1,6 @@
 {
   "name": "gale.js",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Basic static site generator, noting more, nothing less. It literally just spits out html and other files for a static site. What did you expect?",
   "main": "server.js",
   "scripts": {
@@ -8,7 +8,8 @@
     "dev": "supervisor -i ./client/,./backoffice/,./views/,./public/,./server/storage/ --inspect server.js",
     "watch": "webpack --config ./client/webpack.config.js --watch",
     "build-assets": "webpack --config ./client/webpack.config.js --mode=\"production\"",
-    "build": "node ./commands/build.js"
+    "build": "node ./commands/build.js",
+    "ship": "node ./commands/ship.js"
   },
   "repository": {
     "type": "git",
